@@ -1,0 +1,21 @@
+<div class="container">
+    <form [formGroup]="sensorform" (ngSubmit)="submitRegistration()" novalidate>
+      <div *ngIf="validMessage != ''">
+        <h3 class="has-info">{{validMessage}}</h3>
+      </div>
+      <div class="form-group">
+        <label>Time Stamp</label>
+        <input type="text" class="form-control" formControlName="timeStamp" required autofocus/>
+      </div>
+      <div class="form-group">
+        <label>Flow</label>
+        <input type="text" class="form-control" formControlName="flow" required/>
+      </div>
+      <div class="form-group">
+        <label>Pressure</label>
+        <input type="text" class="form-control" formControlName="pressure" required/>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-bordered table-inverse">
+      <tr>
+        <th>ID</th>
+        <th>Time</th>
+        <th>Flow</th>
+        <th class="text-right">Pressure</th>
+      </tr>
+      <tr *ngFor="let sensor of sensors">
+        <td>
+          <a [routerLink]="['/weatherlisting/view', sensor.id]">{{sensor.id}}</a>
+        </td>
+        <td>
+          {{sensor.timeStamp}}
+        </td>
+        <td>
+          {{sensor.flow}}
+        </td>
+        <td class="text-right">
+          {{sensor.pressure}}
+        </td>
+      </tr>
+    </table>
+  </div>
