@@ -9,6 +9,8 @@ import { SensorService } from './services/sensor.service';
 import { WeatherListingComponent } from './components/weather-listing/weather-listing.component';
 import { WeatherRegistrationComponent } from './components/weather-registration/weather-registration.component';
 import { WeatherDetailComponent } from './components/weather-detail/weather-detail.component';
+import {BarChartComponent} from './components/barchart/bar-chart.component';
+import {ChartsModule} from 'ng2-charts';
 
 
 @NgModule({
@@ -16,13 +18,17 @@ import { WeatherDetailComponent } from './components/weather-detail/weather-deta
     AppComponent,
     WeatherListingComponent,
     WeatherRegistrationComponent,
-    WeatherDetailComponent
+    WeatherDetailComponent,
+    BarChartComponent
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
+    ChartsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [SensorService],
   bootstrap: [AppComponent]
