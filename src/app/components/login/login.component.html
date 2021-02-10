@@ -1,0 +1,17 @@
+<div class="container">
+
+    <form [formGroup]="loginform" (ngSubmit)="validateLogin()" novalidate>
+        <div *ngIf="validMessage != ''">
+            <h3 class="has-info">{{validMessage}}</h3>
+        </div>
+
+        <label for="uname"><b>Username</b></label>
+        <input type="text" class="form-control" formControlName="username" required autofocus>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" class="form-control" formControlName="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+    
+  </div>

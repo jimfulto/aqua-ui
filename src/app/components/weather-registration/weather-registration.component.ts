@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SensorService } from 'src/app/services/sensor.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-weather-registration',
@@ -13,7 +14,7 @@ export class WeatherRegistrationComponent implements OnInit {
   sensorform!: FormGroup;
   validMessage: string = "";
 
-  constructor(private sensorService: SensorService) { }
+  constructor(private sensorService: SensorService, private router: Router) { }
 
   ngOnInit(): void {
     this.sensorform = new FormGroup({
@@ -26,7 +27,6 @@ export class WeatherRegistrationComponent implements OnInit {
   submitRegistration() {
 
     if(this.sensorform.valid) {
-      this.validMessage = "Your report has been submitted!";
       this.sensorService.createSensorRegistration(this.sensorform.value).subscribe(
         data => {
           this.sensorform.reset();
@@ -34,7 +34,8 @@ export class WeatherRegistrationComponent implements OnInit {
         error => {
           return Observable.throw(error);
         }
-      )
+      );
+      this.router.navigate(['weatherlisting']);
     } else {
       this.validMessage = "Please fill out the form before submitting";
     }

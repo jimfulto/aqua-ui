@@ -11,6 +11,7 @@ import { WeatherRegistrationComponent } from './components/weather-registration/
 import { WeatherDetailComponent } from './components/weather-detail/weather-detail.component';
 import {BarChartComponent} from './components/barchart/bar-chart.component';
 import {ChartsModule} from 'ng2-charts';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {ChartsModule} from 'ng2-charts';
     WeatherListingComponent,
     WeatherRegistrationComponent,
     WeatherDetailComponent,
-    BarChartComponent
+    BarChartComponent,
+    LoginComponent
   ],
   imports: [
 
