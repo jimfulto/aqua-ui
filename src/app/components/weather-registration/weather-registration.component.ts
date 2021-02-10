@@ -13,6 +13,8 @@ export class WeatherRegistrationComponent implements OnInit {
 
   sensorform!: FormGroup;
   validMessage: string = "";
+  currentDate = new Date();
+  date: string = "";
 
   constructor(private sensorService: SensorService, private router: Router) { }
 

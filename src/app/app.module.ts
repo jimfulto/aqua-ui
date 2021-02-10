@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SensorService } from './services/sensor.service';
@@ -12,6 +13,7 @@ import { WeatherDetailComponent } from './components/weather-detail/weather-deta
 import {BarChartComponent} from './components/barchart/bar-chart.component';
 import {ChartsModule} from 'ng2-charts';
 import { LoginComponent } from './components/login/login.component';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { LoginComponent } from './components/login/login.component';
     WeatherRegistrationComponent,
     WeatherDetailComponent,
     BarChartComponent,
-    LoginComponent
+    LoginComponent,
+    SortByPipe
   ],
   imports: [
 
@@ -30,7 +33,7 @@ import { LoginComponent } from './components/login/login.component';
     ChartsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    FormsModule
   ],
   providers: [SensorService],
   bootstrap: [AppComponent]

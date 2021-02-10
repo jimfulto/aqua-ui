@@ -5,7 +5,8 @@
       </div>
       <div class="form-group">
         <label>Time Stamp</label>
-        <input type="text" class="form-control" formControlName="timeStamp" required autofocus/>
+        <input [(ngModel)]="currentDate" type="text" class="form-control" formControlName="timeStamp" required autofocus />
+        <p>{{currentDate | date:'MM-dd-yyyy'}}</p>
       </div>
       <div class="form-group">
         <label>Flow</label>

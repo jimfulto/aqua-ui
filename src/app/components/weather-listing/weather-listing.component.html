@@ -1,3 +1,10 @@
+<div class="col-sm-4">
+  <label for="sort-field">Sort By</label>
+  <select class="form-control" name="sort-field" id="sort-field"[(ngModel)]="sortField">
+    <option *ngFor="let field of sortFields" [value]="field">{{ field }}</option>
+  </select>
+</div>
+
 <div class="container">
     <table class="table table-bordered table-inverse">
       <tr>
@@ -6,7 +13,7 @@
         <th>Flow</th>
         <th class="text-right">Pressure</th>
       </tr>
-      <tr *ngFor="let sensor of sensors">
+      <tr *ngFor="let sensor of sensors.slice(lowerlimit, upperlimit) | sortBy: [sortField];">
         <td>
           <a [routerLink]="['/weatherlisting/view', sensor.id]">{{sensor.id}}</a>
         </td>
@@ -21,5 +28,6 @@
         </td>
       </tr>
     </table>
+    <button type="submit" (click)="nextPage()">Next</button>
   </div>
 <app-bar-chart></app-bar-chart>
