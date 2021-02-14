@@ -5,11 +5,11 @@
             <h3 class="has-info">{{validMessage}}</h3>
         </div>
 
-        <label for="uname"><b>Username</b></label>
-        <input type="text" class="form-control username" formControlName="username" required autofocus>
+        <label class="username" for="uname"><b>Username</b></label>
+        <input type="text" class="form-control" formControlName="username" required autofocus>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" class="form-control password" formControlName="password" required>
+        <label class="password" for="psw"><b>Password</b></label>
+        <input type="password" class="form-control" formControlName="password" required>
 
         <button type="submit" class="login"><i *ngIf="buttonLoad" class="fa fa-spinner fa-spin" aria-hidden="true"></i>Login</button>
     </form>
