@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   loginform!: FormGroup;
   validMessage: string = "";
+  buttonLoad: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -22,9 +23,14 @@ export class LoginComponent implements OnInit {
   }
 
   validateLogin() {
-
     if(this.loginform.valid && this.loginform.controls.username.value == "admin@aqua.com" && this.loginform.controls.password.value =="password") {
-      this.router.navigate(['weatherregistration']);
+      
+      this.buttonLoad = true;
+      setTimeout(
+        () => {
+          this.router.navigate(['weatherregistration']); //arrow function
+        }, 2000
+      );
     } else {
       this.validMessage = "Form not completed/Invalid credentials!!!";
     }

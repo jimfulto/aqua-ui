@@ -15,6 +15,7 @@ export class WeatherRegistrationComponent implements OnInit {
   validMessage: string = "";
   currentDate = new Date();
   date: string = "";
+  buttonLoad: boolean = false;
 
   constructor(private sensorService: SensorService, private router: Router) { }
 
@@ -31,13 +32,18 @@ export class WeatherRegistrationComponent implements OnInit {
     if(this.sensorform.valid) {
       this.sensorService.createSensorRegistration(this.sensorform.value).subscribe(
         data => {
-          this.sensorform.reset();
+          //this.sensorform.reset(); keep data and route
         },
         error => {
           return Observable.throw(error);
         }
       );
-      this.router.navigate(['weatherlisting']);
+      this.buttonLoad = true;
+      setTimeout(
+        () => {
+          this.router.navigate(['weatherlisting']);
+        }, 2000
+      );
     } else {
       this.validMessage = "Please fill out the form before submitting";
     }

@@ -6,12 +6,12 @@
         </div>
 
         <label for="uname"><b>Username</b></label>
-        <input type="text" class="form-control" formControlName="username" required autofocus>
+        <input type="text" class="form-control username" formControlName="username" required autofocus>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" class="form-control" formControlName="password" required>
+        <input type="password" class="form-control password" formControlName="password" required>
 
-        <button type="submit">Login</button>
+        <button type="submit" class="login"><i *ngIf="buttonLoad" class="fa fa-spinner fa-spin" aria-hidden="true"></i>Login</button>
     </form>
     
   </div>
