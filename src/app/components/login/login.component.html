@@ -7,6 +7,8 @@
 
         <label class="username" for="uname"><b>Username</b></label>
         <input type="text" class="form-control" formControlName="username" required autofocus>
+        <!-- for invalid message below code -->
+        <!-- <span *ngIf="!loginform.get('username').valid" class="help-block">Please enter a valid username!</span> -->
 
         <label class="password" for="psw"><b>Password</b></label>
         <input type="password" class="form-control" formControlName="password" required>

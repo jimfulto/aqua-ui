@@ -1,7 +1,7 @@
 <div class="col-sm-4">
   <label for="sort-field">Sort By</label>
   <select class="form-control" name="sort-field" id="sort-field"[(ngModel)]="sortField">
-    <option *ngFor="let field of sortFields" [value]="field">{{ field }}</option>
+    <option *ngFor="let field of sortFields">{{ field }}</option>
   </select>
 </div>
 

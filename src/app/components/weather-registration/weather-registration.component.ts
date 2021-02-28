@@ -22,8 +22,8 @@ export class WeatherRegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.sensorform = new FormGroup({
       timeStamp: new FormControl('', Validators.required),
-      flow: new FormControl('', Validators.required),
-      pressure: new FormControl('', Validators.required)
+      flow: new FormControl('', [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      pressure: new FormControl('', [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
     });
   }
 
